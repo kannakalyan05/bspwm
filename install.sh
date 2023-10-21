@@ -22,7 +22,7 @@ packages=(
   ttf-jetbrains-mono-nerd
   ttf-comic-sans
   ttf-iosevka-nerd
-  ttf-noto-fonts
+  ttf-noto-nerd
   ttf-nerd-fonts-symbols
   ttf-material-design-icons-desktop-git
 )
