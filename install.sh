@@ -10,7 +10,6 @@ packages=(
   sxhkd
   bspwm
   sddm
-  ttf-jetbrains-mono-nerd
   pipewire
   wireplumber
   lxappearance
@@ -20,6 +19,8 @@ packages=(
   adwaita-icon-theme
   adwaita-cursors
   adwaita-dark
+  ttf-jetbrains-mono-nerd
+  ttf-comic-sans
 )
 
 # function that will test for a package and if not found it will attempt to install it
