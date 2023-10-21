@@ -9,6 +9,7 @@ packages=(
   alacritty
   sxhkd
   bspwm
+  sddm
   ttf-jetbrains-mono-nerd
   pipewire
   wireplumber
@@ -31,6 +32,12 @@ install_software() {
     echo "Now installing $1 ."
     yay -S $1
   fi
+}
+
+start_services() {
+  echo "Starting services."
+  sudo systemctl enable sddm
+  sudo systemctl enable NetworkManager
 }
 
 # clear the screen
@@ -61,7 +68,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
 
         cp -R config/* ~/.config/
     done
-
+  start_services
 else
   echo -e "Haven't copyied any files"
 fi
