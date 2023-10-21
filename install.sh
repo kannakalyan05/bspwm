@@ -24,6 +24,7 @@ packages=(
   ttf-iosevka-nerd
   ttf-noto-fonts
   ttf-nerd-fonts-symbols
+  ttf-material-design-icons-desktop-git
 )
 
 # function that will test for a package and if not found it will attempt to install it
