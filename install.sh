@@ -19,7 +19,7 @@ packages=(
   adwaita-icon-theme
   adwaita-cursors
   adwaita-dark
-  ttf-jetbrains-mono-nerd-font
+  ttf-jetbrains-mono-nerd
   ttf-comic-sans
   ttf-iosevka-nerd
   ttf-noto-fonts
