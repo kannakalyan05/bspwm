@@ -19,8 +19,10 @@ packages=(
   adwaita-icon-theme
   adwaita-cursors
   adwaita-dark
-  ttf-jetbrains-mono-nerd
+  ttf-jetbrains-mono-nerd-font
   ttf-comic-sans
+  ttf-iosevka-nerd
+  ttf-nerd-fonts-symbols
 )
 
 # function that will test for a package and if not found it will attempt to install it
