@@ -1,20 +1,29 @@
+#!/bin/bash
+
+cd config  # Change the working directory to "config"
+
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to replace files? (y,n) ' CFG
+
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
   echo -e "Replacing config files..."
-  # check for existing config folders and removing 
+  # Check for existing config folders and remove them
   for DIR in bspwm sxhkd rofi polybar alacritty backgrounds dunst nitrogen
-  do 
-    PWD=$(pwd)
-    PWDFILE=$PWD/$DIR
+  do
+    CWD=$(pwd)
+    PWDFILE=$CWD/$DIR
     DIRPATH=~/.config/$DIR
-    if [ -d "$PWDFILE" ]; then 
+    if [ -d "$PWDFILE" ]; then
       echo -e "Config for $PWDFILE located, deleting it."
       rm -rf $PWDFILE
       echo -e "Deleted $PWDFILE."
       cp -R $DIRPATH $PWDFILE
-      echo "Completed copying file from $DIRPATH to $PWDFILE"
+      echo "Completed copying files from $DIRPATH to $PWDFILE"
+    else
+      echo -e "Something wrong went."
     fi
   done
 else
-  echo -e "Haven't copyied any files"
+  echo -e "Haven't copied any files"
 fi
+
+cd ..
