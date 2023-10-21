@@ -142,12 +142,9 @@ XF86MonBrightnessDown
 # Audio Control
 XF86AudioRaiseVolume
   $HOME/.config/sxhkd/volume --inc
-#  wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
 
 XF86AudioLowerVolume 
   $HOME/.config/sxhkd/volume --dec
-# wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 
 XF86AudioMute
   $HOME/.config/sxhkd/volume --toggle
-# wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
