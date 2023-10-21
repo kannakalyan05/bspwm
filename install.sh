@@ -11,6 +11,7 @@ packages=(
   bspwm
   ttf-jetbrains-mono-nerd
   pipewire
+  wireplumber
   lxappearance
   xf86-input-synaptics
   pw-volume
