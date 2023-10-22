@@ -27,7 +27,6 @@ specific_fonts=(
   ttf-jetbrains-mono-nerd
   ttf-comic-sans
   ttf-iosevka-nerd
-  noto-fonts-emoji
   )
 
 # This section downloads fornts needed (Indian, Chinese, Japanese, Korean, and MS fonts for working in Libre office which includes TimesNewRoman)
@@ -35,6 +34,7 @@ complete_fonts=(
   sanskrit-fonts
   adobe-source-han-sans-otc-fonts
   ttf-ms-fonts
+  noto-fonts-emoji
   )
 
 apps=(
