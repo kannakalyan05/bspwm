@@ -1,7 +1,6 @@
 #!/bin/bash
 
 packages=(
-  thunar
   network-manager-applet
   dunst
   libnotify
@@ -20,6 +19,7 @@ packages=(
   adwaita-icon-theme
   adwaita-cursors
   adwaita-dark
+  thunar
  )
 
  #Note ttf-icomoon-feather is not installed please install that font manually aur package is having some issues
@@ -50,7 +50,7 @@ apps=(
 )
 
 sddm_themes() {
-  sudo pacman -S plasma-framework
+  sudo pacman -S plasma-framework5
 }
 
 # function that will test for a package and if not found it will attempt to install it
@@ -119,10 +119,8 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
             rm -rf $DIRPATH
             echo -e "$COK - Deleted $DIR."
         fi
-
         cp -R config/* ~/.config/
     done
-  start_services
 else
   echo -e "Haven't copyied any files"
 fi
@@ -138,7 +136,6 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
   sudo cp extras/100-touchpad.conf $MOSFILE
 else
   echo -e "Something went wrong please copy the touchpad file manually"
-  exit
 fi
 
 # Copy the SDDM theme
@@ -162,7 +159,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
   sudo cp extras/bspwm.desktop /usr/share/xsessions/
 else
   echo -e "Something went wrong please copy the SDDM Theme manually"
-  exit
 fi
 
+start_services
 echo -e "Done with the script reboot to enjoy the bspwm experience"
