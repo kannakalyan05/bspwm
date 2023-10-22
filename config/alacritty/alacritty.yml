@@ -15,5 +15,5 @@ font:
   bold_italic:
     family: Fira Code
     style: Bold Italic
-  size: 14 
+  size: 10 
 theme: Gruvbox-Dark
