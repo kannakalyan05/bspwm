@@ -16,9 +16,9 @@ bspc config focus_follows_pointer true
 #bspc rule -a Thunar state=floating rectangle=650x500+1050+100
 
 # Floating Apps
-declare -a floatingApps=(xdman-Main Lxappearance Gparted Thunar \ 
-Viewnior Xarchiver Pavucontrol Brave:Dialog \
-Brave:Pop-up nitrogen Gpick)
+declare -a floatingApps=(Lxappearance Gparted Thunar \ 
+Viewnior Xarchiver Brave:Dialog \
+Brave:Pop-up nitrogen)
 for i in ${floatingApps[@]}; do
     bspc rule -a $i state=floating focus=on follow=on; done
 
