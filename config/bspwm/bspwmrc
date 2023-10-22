@@ -1,24 +1,28 @@
 #! /bin/sh
 
+# Startups
+$HOME/.config/bspwm/autostart
+
 pgrep -x sxhkd > /dev/null || sxhkd &
-
 bspc monitor -d 1 2 3 4
-
 bspc config border_width         2
 bspc config window_gap          5
-
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config focus_follows_pointer true
 
 # Floating mode for some Applications
+#bspc rule -a Thunar state=floating rectangle=650x500+1050+100
 
-bspc rule -a Thunar state=floating rectangle=650x500+1050+100
+# Floating Apps
+declare -a floatingApps=(xdman-Main Lxappearance Gparted Thunar \ 
+Viewnior Xarchiver Pavucontrol firefox:Dialog firefox:Browser \
+firefox:Pop-up nitrogen Gpick)
+for i in ${floatingApps[@]}; do
+    bspc rule -a $i state=floating focus=on follow=on; done
 
-# Auto Start Applications
-sxhkd &
-$HOME/.config/polybar/launch.sh --forest
-nitrogen --restore
-nm-applet --indicator &
-dunst &
+declare -a floatingCust=(*:*:Picture-in-picture *:Toolkit:Picture-in-Picture mpv)
+for i in ${floatingCust[@]}; do
+	bspc rule -a $i state=floating sticky=on follow=off focus=on \
+    rectangle=500x300+1366+50; done
