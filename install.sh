@@ -49,9 +49,9 @@ apps=(
   eog
 )
 
-#sddm_themes=(
-
-#)
+sddm_themes() {
+  sudo pacman -S plasma-framework
+}
 
 # function that will test for a package and if not found it will attempt to install it
 install_software() {
@@ -144,6 +144,7 @@ fi
 # Copy the SDDM theme
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to use SDDM Sweet Themes? (y,n) ' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
+  sddm_themes
   echo -e "Copying SDDM Themes..."
   echo -e "Setting up the login screen."
   sudo cp -R extras/Sweet /usr/share/sddm/themes/
