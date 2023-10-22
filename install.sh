@@ -49,6 +49,10 @@ apps=(
   eog
 )
 
+#sddm_themes=(
+
+#)
+
 # function that will test for a package and if not found it will attempt to install it
 install_software() {
   # First lets see if the package is there
@@ -134,6 +138,16 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
   sudo cp extras/100-touchpad.conf $MOSFILE
 else
   echo -e "Something went wrong please copy the touchpad file manually"
+  exit
+fi
+
+# Copy mouse Gestures
+read -rep $'[\e[1;33mACTION\e[0m] - Would you like to use SDDM Sweet Themes? (y,n) ' INST
+if [[ $INST == "Y" || $INST == "y" ]]; then
+  echo -e "Copying SDDM Themes..."
+
+else
+  echo -e "Something went wrong please copy the SDDM Theme manually"
   exit
 fi
 
