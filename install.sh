@@ -141,7 +141,7 @@ else
   exit
 fi
 
-# Copy mouse Gestures
+# Copy Sddm Theme
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to use SDDM Sweet Themes? (y,n) ' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
   echo -e "Copying SDDM Themes..."
