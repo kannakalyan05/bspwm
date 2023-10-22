@@ -20,5 +20,5 @@ bspc rule -a Thunar state=floating rectangle=650x500+1050+100
 sxhkd &
 $HOME/.config/polybar/launch.sh --forest
 nitrogen --restore
-nm-applet &
+nm-applet --indicator &
 dunst &
