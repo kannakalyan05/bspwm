@@ -1,6 +1,7 @@
 #!/bin/bash
 
 packages=(
+  thunar
   network-manager-applet
   dunst
   libnotify
@@ -19,12 +20,33 @@ packages=(
   adwaita-icon-theme
   adwaita-cursors
   adwaita-dark
+ )
+
+ #Note ttf-icomoon-feather is not installed please install that font manually aur package is having some issues
+specific_fonts=(
   ttf-jetbrains-mono-nerd
   ttf-comic-sans
   ttf-iosevka-nerd
   noto-fonts-emoji
-  ttf-nerd-fonts-symbols
-  ttf-material-design-icons-desktop-git
+  )
+
+# This section downloads fornts needed (Indian, Chinese, Japanese, Korean, and MS fonts for working in Libre office which includes TimesNewRoman)
+complete_fonts=(
+  sanskrit-fonts
+  adobe-source-han-sans-otc-fonts
+  ttf-ms-fonts
+  )
+
+apps=(
+  brave-bin
+  neovim
+  qbittorrent
+  libre-office-still
+  telegram-desktop
+  kate
+  code
+  mpv
+  eog
 )
 
 # function that will test for a package and if not found it will attempt to install it
@@ -56,6 +78,29 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     done
 fi
 
+### Install all of the complete fonts pacakges ####
+read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install the Complete fonts? (y,n) ' ANSSF
+if [[ $ANSSF == "Y" || $ANSSF == "y" ]]; then
+    for SOFTWR in ${complete_fonts[@]}; do
+        install_software $SOFTWR 
+    done
+fi
+
+### Install all of the specific fonts pacakges ####
+read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install the Specific fonts? (y,n) ' INST
+if [[ $INST == "Y" || $INST == "y" ]]; then
+    for SOFTWR in ${specific_fonts[@]}; do
+        install_software $SOFTWR 
+    done
+fi
+
+### Install all of the above pacakges ####
+read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install the required apps? (y,n) ' INST
+if [[ $INST == "Y" || $INST == "y" ]]; then
+    for SOFTWR in ${apps[@]}; do
+        install_software $SOFTWR 
+    done
+fi
 
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to copy config files? (y,n) ' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
@@ -77,3 +122,6 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
 else
   echo -e "Haven't copyied any files"
 fi
+
+
+
