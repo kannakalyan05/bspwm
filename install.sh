@@ -24,7 +24,7 @@ packages=(
 
  #Note ttf-icomoon-feather is not installed please install that font manually aur package is having some issues
 specific_fonts=(
-  ttf-jetbrains-mono-nerd
+  ttf-fira-code
   ttf-comic-sans
   ttf-iosevka-nerd
   )

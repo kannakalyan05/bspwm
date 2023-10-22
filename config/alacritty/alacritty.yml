@@ -2,18 +2,18 @@ import:
   - ~/.config/alacritty/colors.yml
 font:
   normal:
-    family: JetBrains Mono
+    family: Fira Code
     style: Regular
 
   bold:
-    family: JetBrains Mono
+    family: Fira Code
     style: Bold
 
   italic: 
-    family: JetBrains Mono
+    family: Fira Code
     style: Italic
   bold_italic:
-    family: JetBrains Mono
+    family: Fira Code
     style: Bold Italic
-  size: 9
-    #theme: Gruvbox-Dark
+  size: 14 
+theme: Gruvbox-Dark
