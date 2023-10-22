@@ -17,8 +17,8 @@ bspc config focus_follows_pointer true
 
 # Floating Apps
 declare -a floatingApps=(xdman-Main Lxappearance Gparted Thunar \ 
-Viewnior Xarchiver Pavucontrol firefox:Dialog firefox:Browser \
-firefox:Pop-up nitrogen Gpick)
+Viewnior Xarchiver Pavucontrol Brave:Dialog \
+Brave:Pop-up nitrogen Gpick)
 for i in ${floatingApps[@]}; do
     bspc rule -a $i state=floating focus=on follow=on; done
 
