@@ -79,8 +79,8 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 fi
 
 ### Install all of the complete fonts pacakges ####
-read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install the Complete fonts? (y,n) ' ANSSF
-if [[ $ANSSF == "Y" || $ANSSF == "y" ]]; then
+read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install the Complete fonts? (y,n) ' INST
+if [[ $INST == "Y" || $INST == "y" ]]; then
     for SOFTWR in ${complete_fonts[@]}; do
         install_software $SOFTWR 
     done
@@ -112,7 +112,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
         DIRPATH=~/.config/$DIR
         if [ -d "$DIRPATH" ]; then 
             echo -e "$CAT - Config for $DIR located, deleting it."
-            rm -rf $DIRPATH &>> $INSTLOG
+            rm -rf $DIRPATH
             echo -e "$COK - Deleted $DIR."
         fi
 
@@ -123,5 +123,18 @@ else
   echo -e "Haven't copyied any files"
 fi
 
+# Copy mouse Gestures
+read -rep $'[\e[1;33mACTION\e[0m] - Would you like to configure mouse settings whill be helpfull to use Gestures? (y,n) ' INST
+if [[ $INST == "Y" || $INST == "y" ]]; then
+  echo -e "Copying Mouse settings..."
+  MOSFILE=/etc/X11/xorg.conf.d/30-touchpad.conf
+  sudo rm $MOSFILE
+  echo "Copying Touchpad Gestures File to $MOSFILE "
+  sleep 2
+  sudo cp extras/100-touchpad.conf $MOSFILE
+else
+  echo -e "Something went wrong please copy the touchpad file manually"
+  exit
+fi
 
-
+echo -e "Done with the script reboot to enjoy the bspwm experience"
