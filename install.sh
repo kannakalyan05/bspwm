@@ -141,11 +141,24 @@ else
   exit
 fi
 
-# Copy Sddm Theme
+# Copy the SDDM theme
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to use SDDM Sweet Themes? (y,n) ' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
   echo -e "Copying SDDM Themes..."
-
+  echo -e "Setting up the login screen."
+  sudo cp -R extras/Sweet /usr/share/sddm/themes/
+  sudo chown -R $USER:$USER /usr/share/sddm/themes/Sweet
+  sudo mkdir /etc/sddm.conf.d
+  echo -e "[Theme]\nCurrent=Sweet" | sudo tee -a /etc/sddm.conf.d/10-theme.conf
+  WLDIR=/usr/share/xsessions
+  if [ -d "$WLDIR" ]; then
+      echo -e "$WLDIR found"
+  else
+      echo -e "$WLDIR NOT found, creating..."
+      sudo mkdir $WLDIR
+  fi 
+  # stage the .desktop file
+  sudo cp extras/bspwm.desktop /usr/share/xsessions/
 else
   echo -e "Something went wrong please copy the SDDM Theme manually"
   exit
