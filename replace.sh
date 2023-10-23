@@ -7,7 +7,7 @@ read -rep $'[\e[1;33mACTION\e[0m] - Would you like to replace files? (y,n) ' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
   echo -e "Replacing config files..."
   # Check for existing config folders and remove them
-  for DIR in bspwm sxhkd polybar alacritty backgrounds dunst nitrogen
+  for DIR in bspwm sxhkd polybar alacritty backgrounds rofi dunst nitrogen
   do
     CWD=$(pwd)
     PWDFILE=$CWD/$DIR
