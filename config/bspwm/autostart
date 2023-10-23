@@ -1,6 +1,6 @@
 # Auto Start Applications
 sxhkd &
 $HOME/.config/polybar/launch.sh
-nitrogen --restore
+feh --bg-fill "${HOME}/.config/backgrounds/kakashi.jpg"
 nm-applet --indicator &
 dunst &

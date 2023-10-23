@@ -20,6 +20,7 @@ packages=(
   adwaita-dark
   network-manager-applet
   thunar
+  feh
  )
 
  #Note ttf-icomoon-feather is not installed please install that font manually aur package is having some issues
@@ -111,7 +112,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
   echo -e "Copying config files..."
 
     # check for existing config folders and removing 
-    for DIR in bspwm sxhkd rofi polybar alacritty backgrounds dunst nitrogen
+    for DIR in bspwm sxhkd rofi polybar alacritty backgrounds dunst
     do 
         DIRPATH=~/.config/$DIR
         if [ -d "$DIRPATH" ]; then 
