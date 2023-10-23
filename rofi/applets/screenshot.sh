@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Import Current Theme
-theme="$HOME/bspwm/rofi/files/applets/style.rasi"
+theme="$HOME/bspwm/rofi/applets/style.rasi"
 
 # Theme Elements
 prompt='Screenshot'

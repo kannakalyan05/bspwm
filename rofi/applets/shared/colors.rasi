@@ -7,4 +7,4 @@
  *
  **/
 
-@import "~/bspwm/rofi/files/colors/onedark.rasi"
+@import "~/bspwm/rofi/colors/onedark.rasi"
