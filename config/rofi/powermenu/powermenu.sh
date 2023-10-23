@@ -60,6 +60,7 @@ run_cmd() {
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
 				bspc quit
+    fi
 	else
 		exit 0
 	fi
