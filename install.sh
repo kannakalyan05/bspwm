@@ -1,7 +1,6 @@
 #!/bin/bash
 
 packages=(
-  network-manager-applet
   dunst
   libnotify
   rofi
@@ -19,6 +18,7 @@ packages=(
   adwaita-icon-theme
   adwaita-cursors
   adwaita-dark
+  network-manager-applet
   thunar
  )
 
