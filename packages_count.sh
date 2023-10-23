@@ -2,6 +2,7 @@
 
 # Define the list of packages
 packages=(
+  neovim
   network-manager-applet
   dunst
   libnotify
@@ -27,8 +28,17 @@ packages=(
 for package in "${packages[@]}"; do
   echo "Checking dependencies for package: $package"
   
-  # Use Yay to list the dependencies and count them
-  dependency_count=$(yay -Qi "$package" | grep -o 'Depends On: ' | wc -l)
+  # Use yay to get package info and filter the "Depends On" line
+  depends_on=$(yay -Qi "$package" | grep -i 'depends on' | cut -d ':' -f2-)
+  
+  # Check if any dependencies were found
+  if [ -n "$depends_on" ]; then
+    # Split the dependencies into an array and count them
+    IFS=', ' read -ra dependencies <<< "$depends_on"
+    dependency_count=${#dependencies[@]}
+  else
+    dependency_count=0
+  fi
   
   # Print the number of dependencies
   echo "Number of dependencies: $dependency_count"
