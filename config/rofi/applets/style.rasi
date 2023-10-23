@@ -14,7 +14,7 @@ configuration {
  *
  **/
 
-@import "~/bspwm/rofi/colors/onedark.rasi"
+@import "~/.config/rofi/colors/onedark.rasi"
 
 * {
     font: "Comic Sans MS 10";

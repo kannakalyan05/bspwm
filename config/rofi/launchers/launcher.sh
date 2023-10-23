@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-theme="$HOME/bspwm/rofi/files/launchers/style"
+theme="$HOME/.config/rofi/launchers/style"
 
 ## Run
 rofi \

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Current Theme
-theme="$HOME/bspwm/rofi/files/powermenu/style"
+theme="$HOME/.config/rofi/powermenu/style"
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"

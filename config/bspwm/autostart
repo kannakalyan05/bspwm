@@ -1,6 +1,6 @@
 # Auto Start Applications
 sxhkd &
-$HOME/.config/polybar/launch.sh --forest
+$HOME/.config/polybar/launch.sh
 nitrogen --restore
 nm-applet --indicator &
 dunst &
