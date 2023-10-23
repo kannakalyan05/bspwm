@@ -21,6 +21,7 @@ packages=(
   network-manager-applet
   thunar
   feh
+  xdg-user-dirs
  )
 
  #Note ttf-icomoon-feather is not installed please install that font manually aur package is having some issues
