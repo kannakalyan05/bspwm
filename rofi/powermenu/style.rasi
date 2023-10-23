@@ -13,8 +13,19 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
-@import                          "shared/fonts.rasi"
+/**
+ *
+ * adapta    catppuccin    everforest    navy       paper
+ * arc       cyberpunk     gruvbox       nord       solarized
+ * black     dracula       lovelace      onedark    yousai
+ *
+ **/
+@import "~/bspwm/rofi/files/colors/onedark.rasi"
+
+* {
+    font: "Comic Sans MS 10";
+}
+
 
 /*****----- Main Window -----*****/
 window {
