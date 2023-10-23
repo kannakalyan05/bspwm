@@ -8,5 +8,6 @@
  **/
 
 * {
+    font: "Comic Sans MS 10";
     font: "Iosevka Nerd Font 10";
 }
