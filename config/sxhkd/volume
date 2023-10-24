@@ -1,40 +1,37 @@
-#!/bin/bash
+#!/bin/sh
 
-get_volume() {
-  volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk -F': ' '{print $2}')
-  percentage=$(echo "$volume * 100" | bc | awk -F'.' '{print $1}')
-  echo "$percentage"
+
+getDefaultSink() {
+    defaultSink=$(pactl info | awk -F : '/Default Sink:/{print $2}')
+    description=$(pactl list sinks | sed -n "/${defaultSink}/,/Description/s/^\s*Description: \(.*\)/\1/p")
+    echo "${description}"
 }
 
+getDefaultSource() {
+    defaultSource=$(pactl info | awk -F : '/Default Source:/{print $2}')
+    description=$(pactl list sources | sed -n "/${defaultSource}/,/Description/s/^\s*Description: \(.*\)/\1/p")
+    echo "${description}"
+}
+VOLUME=$(pamixer --get-volume-human)
+SINK=$(getDefaultSink)
+SOURCE=$(getDefaultSource)
 
 # Notify
 notify_user() {
-  notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "Volume: " -h "int:value:$(get_volume)"
-}
-
-# Increase Volume
-inc_volume() {
-	wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+ && notify_user
-}
-
-# Decrease Volume
-dec_volume() {
-	wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && notify_user
-}
-
-# Toggle Mute
-toggle_mute() {
-  	wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && notify_user
+  notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "Volume: " -h int:value:"$VOLUME"
 }
 
 
-# Execute accordingly
-if [[ "$1" == "--inc" ]]; then
-	inc_volume
-elif [[ "$1" == "--dec" ]]; then
-	dec_volume
-elif [[ "$1" == "--toggle" ]]; then
-	toggle_mute
-else
-  echo "Available options: --inc --dec --toggle"
-fi
+case $1 in
+    "--inc")
+        pamixer --increase 2 && notify_user
+        ;;
+    "--dec")
+        pamixer --decrease 2 && notify_user
+        ;;
+    "--toggle")
+        pamixer --toggle-mute && notify_user
+        ;;
+    *)
+        echo "Source: ${SOURCE} | Sink: ${VOLUME} ${SINK}"
+esac

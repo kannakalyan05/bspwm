@@ -136,7 +136,7 @@ XF86MonBrightnessUp
   brightnessctl set 5%+
   
 XF86MonBrightnessUp
-  notify-send "brightness increased"
+  brightnessctl set 5%-
 
 # Lower Brightness
 XF86MonBrightnessDown
