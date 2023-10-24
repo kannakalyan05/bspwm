@@ -19,9 +19,12 @@ packages=(
   bc
   picom-git
   xdg-user-dirs
+  pactl
+  pw-cat
+  pamixer
  )
 
- add_packages=(
+ extra_packages=(
    lxappearance
    adwaita-dark
    adwaita-cursors
