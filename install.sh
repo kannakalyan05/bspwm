@@ -23,7 +23,9 @@ packages=(
   polkit-gnome
   xdg-user-dirs
   lxappearance
+  nwg-look-bin
   gtk2
+  gtk3
   pavucontrol-git
   pamixer
  )
