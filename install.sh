@@ -19,8 +19,9 @@ packages=(
   bc
   picom-git
   xdg-user-dirs
-  pactl
-  pw-cat
+  lxappearance
+  gtk2
+  pavucontrol-git
   pamixer
  )
 
