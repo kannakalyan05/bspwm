@@ -17,8 +17,8 @@ bspc config focus_follows_pointer true
 
 # Floating Apps
 declare -a floatingApps=(Lxappearance Gparted Thunar \ 
-Viewnior Xarchiver Brave:Dialog \
-Brave:Pop-up nitrogen)
+Viewnior Xarchiver \
+Brave:Dialog Brave:Pop-up)
 for i in ${floatingApps[@]}; do
     bspc rule -a $i state=floating focus=on follow=on; done
 
