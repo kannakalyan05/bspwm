@@ -22,21 +22,14 @@ packages=(
   gnome-keyring
   polkit-gnome
   xdg-user-dirs
-  lxappearance
   nwg-look-bin
   gtk3
   pavucontrol-git
   pamixer
+  adwaita-dark-darose
  )
 
- extra_packages=(
-   lxappearance
-   adwaita-dark
-   adwaita-cursors
-   adwaita-icon-theme
-   )
-
- #Note ttf-icomoon-feather is not installed please install that font manually aur package is having some issues
+# Note ttf-icomoon-feather is not installed please install that font manually aur package is having some issues
 specific_fonts=(
   ttf-fira-code
   ttf-comic-sans
