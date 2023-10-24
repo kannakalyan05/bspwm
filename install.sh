@@ -11,19 +11,22 @@ packages=(
   sddm
   pipewire
   wireplumber
-  lxappearance
   xf86-input-synaptics
-  pw-volume
   brightnessctl
-  adwaita-icon-theme
-  adwaita-cursors
-  adwaita-dark
   network-manager-applet
   thunar
   feh
+  bc
   picom-git
   xdg-user-dirs
  )
+
+ add_packages=(
+   lxappearance
+   adwaita-dark
+   adwaita-cursors
+   adwaita-icon-theme
+   )
 
  #Note ttf-icomoon-feather is not installed please install that font manually aur package is having some issues
 specific_fonts=(
