@@ -5,3 +5,4 @@ feh --bg-fill "${HOME}/.config/backgrounds/kakashi.jpg"
 nm-applet --indicator &
 dunst &
 picom --config ~/.config/picom/picom.conf &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

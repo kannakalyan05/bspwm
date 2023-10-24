@@ -18,6 +18,9 @@ packages=(
   feh
   bc
   picom-git
+  polkit
+  gnome-keyring
+  polkit-gnome
   xdg-user-dirs
   lxappearance
   gtk2
