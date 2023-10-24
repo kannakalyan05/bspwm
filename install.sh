@@ -59,7 +59,7 @@ apps=(
 )
 
 sddm_themes() {
-  sudo pacman -S qt5-quickcontrols2 qt5-graphicaleffects
+  sudo pacman -S plasma-framework5
 }
 
 # function that will test for a package and if not found it will attempt to install it
