@@ -4,3 +4,4 @@ $HOME/.config/polybar/launch.sh
 feh --bg-fill "${HOME}/.config/backgrounds/kakashi.jpg"
 nm-applet --indicator &
 dunst &
+picom --config ~/.config/picom/picom.conf &

@@ -21,6 +21,7 @@ packages=(
   network-manager-applet
   thunar
   feh
+  picom-git
   xdg-user-dirs
  )
 
@@ -48,7 +49,6 @@ apps=(
   kate
   code
   mpv
-  eog
 )
 
 sddm_themes() {
