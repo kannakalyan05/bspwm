@@ -121,7 +121,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
   echo -e "Copying config files..."
 
     # check for existing config folders and removing 
-    for DIR in bspwm sxhkd rofi polybar alacritty backgrounds dunst gtk-3.o
+    for DIR in bspwm sxhkd rofi polybar alacritty backgrounds dunst gtk-3.0
     do 
         DIRPATH=~/.config/$DIR
         if [ -d "$DIRPATH" ]; then 
