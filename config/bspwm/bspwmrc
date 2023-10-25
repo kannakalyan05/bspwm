@@ -29,7 +29,7 @@ declare -a floatingApps=(
   Cheese
   Thunar
   Pavucontrol
-  mpv
+  Nwg-look
   Brave:Dialog Brave:Pop-up
 )
 for i in ${floatingApps[@]}; do
