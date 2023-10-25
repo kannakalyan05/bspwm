@@ -1,10 +1,24 @@
 #!/bin/sh
 
 VOLUME=$(pamixer --get-volume-human)
+VOLUMEn=$(echo "$VOLUME" | sed 's/%//')
+
+# Get icons
+get_icon() {
+	if [[ "$VOLUMEn" -eq "0" ]]; then
+		echo "󰖁 "
+	elif [[ ("$VOLUMEn" -ge "0") && ("$VOLUMEn" -le "30") ]]; then
+		echo "󰕿 "
+	elif [[ ("$VOLUMEn" -ge "30") && ("$VOLUMEn" -le "60") ]]; then
+		echo "󰖀 "
+	elif [[ ("$VOLUMEn" -ge "60") && ("$VOLUMEn" -le "100") ]]; then
+		echo "󰕾 "
+	fi
+}
 
 # Notify
 notify_user() {
-  notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "Volume: " -h int:value:"$VOLUME"
+  notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "$(get_icon)" -h int:value:"$VOLUME"
 }
 
 case $1 in

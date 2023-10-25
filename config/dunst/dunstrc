@@ -15,7 +15,7 @@
     # _NET_ACTIVE_WINDOW property.
     # This should be the case for almost all modern window managers.
     #
-    # If this option is set to mouse or keyboard, the monitor option
+    # If this opt󰓃ion is set to mouse or keyboard, the monitor option
     # will be ignored.
     follow = none
 
@@ -27,7 +27,7 @@
     width = (0, 300)
 
     # The maximum height of a single notification, excluding the frame.
-    height = (0, 300)
+    height = 300
 
     # Position the notification in the top right corner
     origin = top-right
@@ -50,7 +50,7 @@
 
     # Set the progress bar height. This includes the frame, so make sure
     # it's at least twice as big as the frame width.
-    progress_bar_height = 5
+    progress_bar_height = 10
 
     progress_bar_horizontal_alignment = right
     progress_bar_corner_radius = 3
@@ -155,7 +155,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s<b>\n%b %n"
+    format = "%s %n"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
